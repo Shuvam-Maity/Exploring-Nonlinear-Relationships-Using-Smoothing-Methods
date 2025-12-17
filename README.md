@@ -1,6 +1,6 @@
 # Exploring-Nonlinear-Relationships-Using-Smoothing-Methods
 
-📌 Project Overview
+#📌 Project Overview
 
 This project explores the nonlinear and saturating relationship between GDP per capita and life expectancy at birth using real-world socioeconomic data. Traditional linear models fail to capture this pattern, so nonparametric smoothing techniques are applied to model the relationship flexibly without assuming a fixed functional form.
 
