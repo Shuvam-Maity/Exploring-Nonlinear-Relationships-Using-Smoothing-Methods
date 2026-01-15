@@ -8,45 +8,45 @@ The analysis demonstrates how different smoothing methods handle bias–variance
 
 # 📊 Dataset
 
-##Source: Our World in Data
+=>Source: Our World in Data
 
-Observations: 1,400+ country-year records after cleaning
+=>Observations: 1,400+ country-year records after cleaning
 
-Features Used:
+=>Features Used:
 
-GDP per capita (independent variable)
+>GDP per capita (independent variable)
 
-Life expectancy at birth (dependent variable)
+>Life expectancy at birth (dependent variable)
 
-Missing values were removed and outliers were filtered using the Interquartile Range (IQR) method to ensure robust modeling.
+>Missing values were removed and outliers were filtered using the Interquartile Range (IQR) method to ensure robust modeling.
 
 # 🔧 Methodology
 
-Performed exploratory data analysis to identify nonlinear trends.
+>Performed exploratory data analysis to identify nonlinear trends.
 
-Applied nonparametric regression techniques:
+>Applied nonparametric regression techniques:
 
-Bin Smoothing
+>Bin Smoothing
 
-K-Nearest Neighbors Smoothing
+>K-Nearest Neighbors Smoothing
 
-LOESS
+>LOESS
 
-Kernel Regression
+>Kernel Regression
 
-Used 5-fold cross-validation for hyperparameter tuning.
+>Used 5-fold cross-validation for hyperparameter tuning.
 
-Evaluated models using Mean Squared Error (MSE) and Mean Absolute Error (MAE).
+>Evaluated models using Mean Squared Error (MSE) and Mean Absolute Error (MAE).
 
-Compared models based on predictive accuracy, smoothness, and interpretability.
+>Compared models based on predictive accuracy, smoothness, and interpretability.
 
 # ✅ Key Results
 
-The Kernel Regression model using the Epanechnikov kernel with bandwidth 0.10 achieved the lowest test error.
+>The Kernel Regression model using the Epanechnikov kernel with bandwidth 0.10 achieved the lowest test error.
 
-Results confirm a saturating nonlinear relationship, where life expectancy increases rapidly at low income levels and flattens at higher GDP levels.
+>Results confirm a saturating nonlinear relationship, where life expectancy increases rapidly at low income levels and flattens at higher GDP levels.
 
-The findings are consistent with established economic theory, including the Preston Curve.
+>The findings are consistent with established economic theory, including the Preston Curve.
 
 # 🛠 Tools & Technologies
 
