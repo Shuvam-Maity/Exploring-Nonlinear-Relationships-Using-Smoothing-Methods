@@ -1,61 +1,77 @@
-# Exploring-Nonlinear-Relationships-Using-Smoothing-Methods
+# Exploring Nonlinear Relationships Using Smoothing Methods
 
-# 📌 Project Overview
+## 📌 Project Overview
+This project investigates the **nonlinear and saturating relationship between GDP per capita and life expectancy at birth** using real-world socioeconomic data. Traditional linear regression models fail to capture this pattern, motivating the use of **nonparametric smoothing techniques** that adapt flexibly to the data without imposing a fixed functional form.
 
-This project explores the nonlinear and saturating relationship between GDP per capita and life expectancy at birth using real-world socioeconomic data. Traditional linear models fail to capture this pattern, so nonparametric smoothing techniques are applied to model the relationship flexibly without assuming a fixed functional form.
+The study evaluates multiple smoothing methods and demonstrates how bias–variance trade-offs influence predictive performance.
 
-The analysis demonstrates how different smoothing methods handle bias–variance trade-offs and identifies the most effective approach through systematic evaluation.
+---
 
-# 📊 Dataset
+## 📊 Dataset
+- **Source:** Our World in Data  
+- **Observations:** 1,400+ country–year records after cleaning  
 
-=>Source: Our World in Data
+### Features Used
+- **GDP per capita** (independent variable)  
+- **Life expectancy at birth** (dependent variable)
 
-=>Observations: 1,400+ country-year records after cleaning
+### Data Preprocessing
+- Removed missing values
+- Filtered outliers using the **Interquartile Range (IQR)** method
+- Standardized variables where required for fair model comparison
 
-=>Features Used:
+---
 
->GDP per capita (independent variable)
+## 🔧 Methodology
+1. Conducted exploratory data analysis to identify nonlinear trends
+2. Applied the following nonparametric regression techniques:
+   - Bin Smoothing
+   - K-Nearest Neighbors (KNN) Smoothing
+   - LOESS
+   - Kernel Regression
+3. Performed **5-fold cross-validation** for hyperparameter tuning
+4. Evaluated models using:
+   - Mean Squared Error (MSE)
+   - Mean Absolute Error (MAE)
+5. Compared models based on:
+   - Predictive accuracy
+   - Smoothness
+   - Interpretability
 
->Life expectancy at birth (dependent variable)
+---
 
->Missing values were removed and outliers were filtered using the Interquartile Range (IQR) method to ensure robust modeling.
+## ✅ Key Results
+- **Kernel Regression** with an **Epanechnikov kernel** and bandwidth **0.10** achieved the lowest test error.
+- The relationship exhibits a clear **saturation effect**:
+  - Rapid gains in life expectancy at low income levels
+  - Diminishing returns at higher GDP per capita
+- Results align with established economic theory, particularly the **Preston Curve**.
 
-# 🔧 Methodology
+---
 
->Performed exploratory data analysis to identify nonlinear trends.
+## 📈 Visualizations
+The project includes:
+- Scatter plots with smoothed regression curves
+- Model comparison plots across smoothing techniques
+- Cross-validation error vs. bandwidth/parameter plots
 
->Applied nonparametric regression techniques:
+---
 
->Bin Smoothing
+## 🛠 Tools & Technologies
+**Languages:**  
+- R  
+- Python  
 
->K-Nearest Neighbors Smoothing
+**Libraries:**  
+- NumPy  
+- Pandas  
+- SciPy  
+- scikit-learn  
+- statsmodels  
+- Matplotlib  
 
->LOESS
-
->Kernel Regression
-
->Used 5-fold cross-validation for hyperparameter tuning.
-
->Evaluated models using Mean Squared Error (MSE) and Mean Absolute Error (MAE).
-
->Compared models based on predictive accuracy, smoothness, and interpretability.
-
-# ✅ Key Results
-
->The Kernel Regression model using the Epanechnikov kernel with bandwidth 0.10 achieved the lowest test error.
-
->Results confirm a saturating nonlinear relationship, where life expectancy increases rapidly at low income levels and flattens at higher GDP levels.
-
->The findings are consistent with established economic theory, including the Preston Curve.
-
-# 🛠 Tools & Technologies
-
-Languages: R, Python
-
-Libraries: NumPy, Pandas, SciPy, scikit-learn, statsmodels, Matplotlib
-
-Techniques: Nonparametric Regression, Cross-Validation, Hyperparameter Tuning, Data Visualization
-
-# 📌 Conclusion
-
-This project highlights the effectiveness of nonparametric smoothing methods for modeling complex real-world relationships. It demonstrates the importance of careful hyperparameter tuning and model evaluation to balance flexibility and generalization.
+**Techniques:**  
+- Nonparametric Regression  
+- Cross-Validation  
+- Hyperparameter Tuning  
+- Data Visualization  
